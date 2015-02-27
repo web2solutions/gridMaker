@@ -39,8 +39,11 @@ setcookie(
 				CAIRS.onDemand.load( [ cdn_application_path + "lib/controller/gridMaker.js" ], function ()
 				{			
 					gridMaker.start( {  
-                    	agency_id : 25
-						,base_path : window.location.protocol + '//' + window.location.host + '/'
+                    	agency_id : 25 // Type: integer. Mandatory
+						,ConnID : -85771 // Type: integer. Mandatory
+                        ,ConnectionId : 275138 // Type: integer. Mandatory
+						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory
+						,field_id : 0 // Not mandatory, default 0. Type: integer	
 					} );
 				});								
             }
