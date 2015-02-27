@@ -5,7 +5,10 @@ IF OBJECT_ID('dbo.gridmaker_table', 'U') IS NOT NULL
 CREATE TABLE dbo.gridmaker_table( 
         gridmaker_table_id INT not null Identity(1,1),
 		field_id integer NOT NULL,
-        table_name varchar(max),
+        table_name varchar(max) NOT NULL,
+		grid_name varchar(max) NOT NULL,
+		//grid_number_format varchar(max),
+		grid_date_format varchar(max) default '%m-%d-%Y',
         CONSTRAINT gridmaker_table_pkey PRIMARY KEY (gridmaker_table_id)
 );
 
