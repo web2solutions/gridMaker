@@ -29,8 +29,51 @@ setcookie(
         <title>gridMaker Demo</title>
         <!-- CAIRS Framework -->
 		<script type="text/javascript" src="../CAIRS_Framework/CAIRS_fw.js"></script>
+        <style>
         
+		.div_test{
+			width:500px;
+			height:400px;
+			float:left;
+			margin:50px;
+			background:#069;
+		}
+		
+        </style>
         <script type="text/javascript" >
+		
+		
+			function build1( div_id ){
+				gridMaker.view.Builder.render({
+					field_id : 0 // Not mandatory, default 0. Type: integer
+					,container: div_id // Mandatory. DIV ID. Type string
+				});
+			}
+			
+			function build2( div_id ){
+				gridMaker.view.Builder.render({
+					field_id : 0 // Not mandatory, default 0. Type: integer
+					,container: div_id // Mandatory. DIV ID. Type string
+				});
+			}
+			
+			
+			function render1( div_id ){
+				gridMaker.view.CRUD.render({
+					field_id : 0 // Not mandatory, default 0. Type: integer
+					,container: div_id // Mandatory. DIV ID. Type string
+					,settings : {} // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
+				});
+			}
+			
+			function render2( div_id ){
+				gridMaker.view.CRUD.render({
+					field_id : 0 // Not mandatory, default 0. Type: integer
+					,container: div_id // Mandatory. DIV ID. Type string
+					,settings : {} // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
+				});
+			}
+		
             window.onload = function()
             {
 				var cdn_application_path = window.location.protocol + '//' + window.location.host + '/gridMaker/';
@@ -42,8 +85,7 @@ setcookie(
                     	agency_id : 25 // Type: integer. Mandatory
 						,ConnID : -85771 // Type: integer. Mandatory
                         ,ConnectionId : 275138 // Type: integer. Mandatory
-						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory
-						,field_id : 0 // Not mandatory, default 0. Type: integer	
+						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory	
 					} );
 				});								
             }
@@ -53,8 +95,20 @@ setcookie(
 				//dhtmlx.message( {type : "error", text : line} );
 				console.log( errorObj );
 			}
+			
          </script>
      </head>
     <body>
+    
+    <div id="grid_1" class="div_test">
+    	<p onClick="build1( this.parentNode.id );">build grid</p>
+    	<p onClick="render1( this.parentNode.id );">render grid</p>
+    </div>
+    <div id="grid_2" class="div_test">
+    	<p onClick="build2( this.parentNode.id );">build grid</p>
+    	<p onClick="render2( this.parentNode.id );">render grid</p>
+    </div>
+    
+    
     </body>
 </html>
