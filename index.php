@@ -36,12 +36,16 @@ setcookie(
 			height:400px;
 			float:left;
 			margin:50px;
-			background:#069;
+			background:#FC0;
+			font-family:Arial, Helvetica, sans-serif;
+			cursor:pointer;
 		}
 		
         </style>
         <script type="text/javascript" >
 		
+		
+			
 		
 			function build1( div_id ){
 				gridMaker.view.Builder.render({
@@ -59,10 +63,11 @@ setcookie(
 			
 			
 			function render1( div_id ){
+				console.log( JSON.stringify( gridMaker.savedSettings[ div_id ] ) );
 				gridMaker.view.CRUD.render({
 					field_id : 0 // Not mandatory, default 0. Type: integer
 					,container: div_id // Mandatory. DIV ID. Type string
-					,settings : {} // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
+					,settings : gridMaker.savedSettings[ div_id ] // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
 				});
 			}
 			
@@ -70,7 +75,7 @@ setcookie(
 				gridMaker.view.CRUD.render({
 					field_id : 0 // Not mandatory, default 0. Type: integer
 					,container: div_id // Mandatory. DIV ID. Type string
-					,settings : {} // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
+					,settings : gridMaker.savedSettings[ div_id ] // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
 				});
 			}
 		
@@ -101,12 +106,12 @@ setcookie(
     <body>
     
     <div id="grid_1" class="div_test">
-    	<p onClick="build1( this.parentNode.id );">build grid</p>
-    	<p onClick="render1( this.parentNode.id );">render grid</p>
+    	<p onClick="build1( this.parentNode.id );"> 1 - click here to test the builder function (bound to FormBuilder DnD)</p>
+    	<p onClick="render1( this.parentNode.id );"> 2 - click here to view the generated grid (bound to FormViewer)</p>
     </div>
     <div id="grid_2" class="div_test">
-    	<p onClick="build2( this.parentNode.id );">build grid</p>
-    	<p onClick="render2( this.parentNode.id );">render grid</p>
+    	<p onClick="build2( this.parentNode.id );"> 1 - click here to test the builder function (bound to FormBuilder DnD</p>
+    	<p onClick="render2( this.parentNode.id );"> 2 - click here to view the generated grid (bound to FormViewer)</p>
     </div>
     
     
