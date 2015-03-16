@@ -49,6 +49,7 @@ setcookie(
 			var settings = {
 				"grid_name": "My complete grid demo",
 				"table_name": "gridMaker_data_0_my_complete_grid_demo",
+				"gridmaker_table_id": '34',
 				"columns": [{
 					"dhtmlx_grid_header": "Text field",
 					"dhtmlx_grid_type": "txttxt",
