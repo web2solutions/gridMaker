@@ -188,10 +188,13 @@ setcookie(
 						,fnCallBack : function(){
 							
 							
+							
 							gridMaker.view.Admin.render({
 								field_id : 0 // Not mandatory, default 0. Type: integer
 								,container: 'grid_1' // Mandatory. DIV ID. Type string
-								,settings : settings // Mandatory. Grid settings 
+								,settings : JSON.parse( sessionStorage.getItem(	
+									gridMaker.settings.appId + "_gridSettings_grid_1"
+								)) // Mandatory. Grid settings 
 								,agency_id : 25 // Type: integer. Mandatory
 								
 							});
