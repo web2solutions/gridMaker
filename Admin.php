@@ -46,125 +46,7 @@ setcookie(
 		
 		
 		
-			var settings = {
-				"grid_name": "My complete grid demo",
-				"table_name": "gridMaker_data_0_my_complete_grid_demo",
-				"gridmaker_table_id": '34',
-				"columns": [{
-					"dhtmlx_grid_header": "Text field",
-					"dhtmlx_grid_type": "txttxt",
-					"column_name": "text_field",
-					"column_type": "varchar(max)",
-					"dhtmlx_grid_sorting": "str",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "Date field",
-					"dhtmlx_grid_type": "dhxCalendarA",
-					"column_name": "date_field",
-					"column_type": "date",
-					"dhtmlx_grid_sorting": "date",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "currency field",
-					"dhtmlx_grid_type": "price",
-					"column_name": "currency_field",
-					"column_type": "numeric(16,2)",
-					"dhtmlx_grid_sorting": "int",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "link field",
-					"dhtmlx_grid_type": "link",
-					"column_name": "link_field",
-					"column_type": "varchar(max)",
-					"dhtmlx_grid_sorting": "str",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "numeric field",
-					"dhtmlx_grid_type": "edn",
-					"column_name": "numeric_field",
-					"column_type": "integer",
-					"dhtmlx_grid_sorting": "int",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "Color field",
-					"dhtmlx_grid_type": "cp",
-					"column_name": "color_field",
-					"column_type": "varchar(20)",
-					"dhtmlx_grid_sorting": "str",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}],
-				"grid": {
-					"head": [{
-						"id": "text_field",
-						"width": "*",
-						"type": "txttxt",
-						"align": "left",
-						"sort": "str",
-						"value": "Text field"
-					}, {
-						"id": "date_field",
-						"width": "*",
-						"type": "dhxCalendarA",
-						"align": "left",
-						"sort": "date",
-						"value": "Date field"
-					}, {
-						"id": "currency_field",
-						"width": "*",
-						"type": "price",
-						"align": "left",
-						"sort": "int",
-						"value": "currency field"
-					}, {
-						"id": "link_field",
-						"width": "*",
-						"type": "link",
-						"align": "left",
-						"sort": "str",
-						"value": "link field"
-					}, {
-						"id": "numeric_field",
-						"width": "*",
-						"type": "edn",
-						"align": "left",
-						"sort": "int",
-						"value": "numeric field"
-					}, {
-						"id": "color_field",
-						"width": "*",
-						"type": "cp",
-						"align": "left",
-						"sort": "str",
-						"value": "Color field"
-					}],
-					"data": [],
-					"rows": [],
-					"headers": ["Text field", "Date field", "currency field", "link field", "numeric field", "Color field"],
-					"ids": ["text_field", "date_field", "currency_field", "link_field", "numeric_field", "color_field"],
-					"widths": ["*", "*", "*", "*", "*", "*"],
-					"colaligns": ["left", "left", "left", "left", "left", "left"],
-					"coltypes": ["txttxt", "dhxCalendarA", "price", "link", "edn", "cp"],
-					"colsorting": ["str", "date", "int", "str", "int", "str"]
-				}
-			}
+			var settings = {"grid_name":"My newest grid sample","table_name":"gridMaker_data_0_my_newest_grid_sample_1427059815947","gridmaker_table_id":"35","columns":[{"dhtmlx_grid_header":"Test text field","dhtmlx_grid_type":"txttxt","column_name":"test_text_field_1427059824843","column_type":"varchar(max)","dhtmlx_grid_sorting":"str","dhtmlx_grid_width":"*","dhtmlx_grid_align":"left","dhtmlx_grid_footer":"","gridmaker_table_id":"35"},{"dhtmlx_grid_header":"Test color field","dhtmlx_grid_type":"cp","column_name":"test_color_field_1427059835578","column_type":"varchar(20)","dhtmlx_grid_sorting":"str","dhtmlx_grid_width":"*","dhtmlx_grid_align":"left","dhtmlx_grid_footer":"","gridmaker_table_id":"35"},{"dhtmlx_grid_header":"Test currency field","dhtmlx_grid_type":"price","column_name":"test_currency_field_1427059847690","column_type":"numeric(16,2)","dhtmlx_grid_sorting":"int","dhtmlx_grid_width":"*","dhtmlx_grid_align":"left","dhtmlx_grid_footer":"","gridmaker_table_id":"35"},{"dhtmlx_grid_header":"Test date field","dhtmlx_grid_type":"dhxCalendarA","column_name":"test_date_field_1427059879353","column_type":"date","dhtmlx_grid_sorting":"date","dhtmlx_grid_width":"*","dhtmlx_grid_align":"left","dhtmlx_grid_footer":"","gridmaker_table_id":"35"},{"dhtmlx_grid_header":"Test numeric field","dhtmlx_grid_type":"edn","column_name":"test_numeric_field_1427059888944","column_type":"integer","dhtmlx_grid_sorting":"int","dhtmlx_grid_width":"*","dhtmlx_grid_align":"left","dhtmlx_grid_footer":"","gridmaker_table_id":"35"}],"grid":{"head":[],"data":[],"rows":[],"headers":["Test text field","Test color field","Test currency field","Test date field","Test numeric field"],"ids":["test_text_field_1427059824843","test_color_field_1427059835578","test_currency_field_1427059847690","test_date_field_1427059879353","test_numeric_field_1427059888944"],"widths":["*","*","*","*","*"],"colaligns":["left","left","left","left","left"],"coltypes":["txttxt","cp","price","dhxCalendarA","edn"],"colsorting":["str","str","int","date","int"]}}
 			
 			
 			
@@ -175,11 +57,15 @@ setcookie(
 		
             window.onload = function()
             {
+				var grid_id = 'grid_1';
 				var cdn_application_path = window.location.protocol + '//' + window.location.host + '/gridMaker/';
 				//CAIRS.environment = "production";	
 				/* load gridMaker */
 				CAIRS.onDemand.load( [ cdn_application_path + "lib/controller/gridMaker.js" ], function ()
 				{			
+					
+					
+					
 					gridMaker.start( {  
                     	agency_id : 25 // Type: integer. Mandatory
 						,ConnID : -85771 // Type: integer. Mandatory
@@ -187,16 +73,28 @@ setcookie(
 						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory
 						,fnCallBack : function(){
 							
+							var storageName = gridMaker.settings.appId + "_gridSettings_" + grid_id;
 							
+							if( typeof localStorage.getItem(storageName) === 'undefined')
+								localStorage.setItem(storageName, JSON.stringify( settings ));
 							
 							gridMaker.view.Admin.render({
 								field_id : 0 // Not mandatory, default 0. Type: integer
-								,container: 'grid_1' // Mandatory. DIV ID. Type string
-								,settings : JSON.parse( sessionStorage.getItem(	
-									gridMaker.settings.appId + "_gridSettings_grid_1"
+								,container: grid_id // Mandatory. DIV ID. Type string
+								,settings : JSON.parse( localStorage.getItem(	
+									gridMaker.settings.appId + "_gridSettings_" + grid_id
 								)) // Mandatory. Grid settings 
 								,agency_id : 25 // Type: integer. Mandatory
 								
+							});
+							
+							
+							gridMaker.view.Viewer.render({
+								field_id : 0 // Not mandatory, default 0. Type: integer
+								,container: grid_id // Mandatory. DIV ID. Type string
+								,settings : JSON.parse( localStorage.getItem(	
+									gridMaker.settings.appId + "_gridSettings_" + grid_id
+								)) // Mandatory. Grid settings 
 							});
 							
 							
