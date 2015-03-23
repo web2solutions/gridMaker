@@ -46,125 +46,7 @@ setcookie(
 		
 		
 		
-			var settings = {
-				"grid_name": "My complete grid demo",
-				"table_name": "gridMaker_data_0_my_complete_grid_demo",
-				"gridmaker_table_id": '34',
-				"columns": [{
-					"dhtmlx_grid_header": "Text field",
-					"dhtmlx_grid_type": "txttxt",
-					"column_name": "text_field",
-					"column_type": "varchar(max)",
-					"dhtmlx_grid_sorting": "str",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "Date field",
-					"dhtmlx_grid_type": "dhxCalendarA",
-					"column_name": "date_field",
-					"column_type": "date",
-					"dhtmlx_grid_sorting": "date",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "currency field",
-					"dhtmlx_grid_type": "price",
-					"column_name": "currency_field",
-					"column_type": "numeric(16,2)",
-					"dhtmlx_grid_sorting": "int",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "link field",
-					"dhtmlx_grid_type": "link",
-					"column_name": "link_field",
-					"column_type": "varchar(max)",
-					"dhtmlx_grid_sorting": "str",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "numeric field",
-					"dhtmlx_grid_type": "edn",
-					"column_name": "numeric_field",
-					"column_type": "integer",
-					"dhtmlx_grid_sorting": "int",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}, {
-					"dhtmlx_grid_header": "Color field",
-					"dhtmlx_grid_type": "cp",
-					"column_name": "color_field",
-					"column_type": "varchar(20)",
-					"dhtmlx_grid_sorting": "str",
-					"dhtmlx_grid_width": "*",
-					"dhtmlx_grid_align": "left",
-					"dhtmlx_grid_footer": "",
-					"gridmaker_table_id": "34"
-				}],
-				"grid": {
-					"head": [{
-						"id": "text_field",
-						"width": "*",
-						"type": "txttxt",
-						"align": "left",
-						"sort": "str",
-						"value": "Text field"
-					}, {
-						"id": "date_field",
-						"width": "*",
-						"type": "dhxCalendarA",
-						"align": "left",
-						"sort": "date",
-						"value": "Date field"
-					}, {
-						"id": "currency_field",
-						"width": "*",
-						"type": "price",
-						"align": "left",
-						"sort": "int",
-						"value": "currency field"
-					}, {
-						"id": "link_field",
-						"width": "*",
-						"type": "link",
-						"align": "left",
-						"sort": "str",
-						"value": "link field"
-					}, {
-						"id": "numeric_field",
-						"width": "*",
-						"type": "edn",
-						"align": "left",
-						"sort": "int",
-						"value": "numeric field"
-					}, {
-						"id": "color_field",
-						"width": "*",
-						"type": "cp",
-						"align": "left",
-						"sort": "str",
-						"value": "Color field"
-					}],
-					"data": [],
-					"rows": [],
-					"headers": ["Text field", "Date field", "currency field", "link field", "numeric field", "Color field"],
-					"ids": ["text_field", "date_field", "currency_field", "link_field", "numeric_field", "color_field"],
-					"widths": ["*", "*", "*", "*", "*", "*"],
-					"colaligns": ["left", "left", "left", "left", "left", "left"],
-					"coltypes": ["txttxt", "dhxCalendarA", "price", "link", "edn", "cp"],
-					"colsorting": ["str", "date", "int", "str", "int", "str"]
-				}
-			}
+			
 			
 			
 			
@@ -175,6 +57,7 @@ setcookie(
 		
             window.onload = function()
             {
+				var grid_id = 'grid_1';
 				var cdn_application_path = window.location.protocol + '//' + window.location.host + '/gridMaker/';
 				//CAIRS.environment = "production";	
 				/* load gridMaker */
@@ -187,10 +70,12 @@ setcookie(
 						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory
 						,fnCallBack : function(){
 							
+							var storageName = gridMaker.settings.appId + "_gridSettings_" + grid_id;
+							var settings = JSON.parse( localStorage.getItem( storageName ));
 							
 							gridMaker.view.CRUD.render({
 								field_id : 0 // Not mandatory, default 0. Type: integer
-								,container: 'grid_1' // Mandatory. DIV ID. Type string
+								,container: grid_id // Mandatory. DIV ID. Type string
 								,settings : settings // Mandatory. Grid settings 
 								// (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
 								//,table_name : ''
