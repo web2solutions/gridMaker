@@ -44,41 +44,6 @@ setcookie(
         </style>
         <script type="text/javascript" >
 		
-		
-			
-		
-			function build1( div_id ){
-				gridMaker.view.Builder.render({
-					field_id : 0 // Not mandatory, default 0. Type: integer
-					,container: div_id // Mandatory. DIV ID. Type string
-				});
-			}
-			
-			function build2( div_id ){
-				gridMaker.view.Builder.render({
-					field_id : 0 // Not mandatory, default 0. Type: integer
-					,container: div_id // Mandatory. DIV ID. Type string
-				});
-			}
-			
-			
-			function render1( div_id ){
-				console.log( JSON.stringify( gridMaker.savedSettings[ div_id ] ) );
-				gridMaker.view.CRUD.render({
-					field_id : 0 // Not mandatory, default 0. Type: integer
-					,container: div_id // Mandatory. DIV ID. Type string
-					,settings : gridMaker.savedSettings[ div_id ] // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
-				});
-			}
-			
-			function render2( div_id ){
-				gridMaker.view.CRUD.render({
-					field_id : 0 // Not mandatory, default 0. Type: integer
-					,container: div_id // Mandatory. DIV ID. Type string
-					,settings : gridMaker.savedSettings[ div_id ] // Mandatory. Grid settings (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON
-				});
-			}
-		
             window.onload = function()
             {
 				var cdn_application_path = window.location.protocol + '//' + window.location.host + '/gridMaker/';
@@ -86,12 +51,37 @@ setcookie(
 				/* load gridMaker */
 				CAIRS.onDemand.load( [ cdn_application_path + "lib/controller/gridMaker.js" ], function ()
 				{			
+					var grid_id = 'grid_1';
+					var field_id = 0;
 					gridMaker.start( {  
                     	agency_id : 25 // Type: integer. Mandatory
 						,ConnID : -85771 // Type: integer. Mandatory
                         ,ConnectionId : 275138 // Type: integer. Mandatory
-						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory	
+						//,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory
+						,fnCallBack : function(){
+							gridMaker.view.Builder.render({
+								field_id : field_id // Not mandatory, default 0. Type: integer
+								,container: grid_id // Mandatory. DIV ID. Type string
+								,fnCallBack : function( settings ){
+									var storageName = gridMaker.settings.appId + "_gridSettings_" + grid_id;
+									var settings = JSON.parse( localStorage.getItem( storageName ));
+									gridMaker.view.Viewer.render({
+										field_id : field_id // Not mandatory, default 0. Type: integer
+										,container: grid_id // Mandatory. DIV ID. Type string
+										,settings : settings // Mandatory. Grid settings 
+									});
+									
+								}
+							});	
+						}	
 					} );
+					
+					
+					
+					
+					
+					
+					
 				});								
             }
 			window.onerror = function(msg, url, line, column, errorObj)
@@ -106,13 +96,8 @@ setcookie(
     <body>
     
     <div id="grid_1" class="div_test">
-    	<p onClick="build1( this.parentNode.id );"> 1 - click here to test the builder function (bound to FormBuilder DnD)</p>
-    	<p onClick="render1( this.parentNode.id );"> 2 - click here to view the generated grid (bound to FormViewer)</p>
     </div>
-    <div id="grid_2" class="div_test">
-    	<p onClick="build2( this.parentNode.id );"> 1 - click here to test the builder function (bound to FormBuilder DnD</p>
-    	<p onClick="render2( this.parentNode.id );"> 2 - click here to view the generated grid (bound to FormViewer)</p>
-    </div>
+
     
     
     </body>
