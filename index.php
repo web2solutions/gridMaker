@@ -63,7 +63,7 @@ setcookie(
 								field_id : field_id // Not mandatory, default 0. Type: integer
 								,container: grid_id // Mandatory. DIV ID. Type string
 								,fnCallBack : function( settings ){
-									var storageName = gridMaker.settings.appId + "_gridSettings_" + grid_id;
+									var storageName = gridMaker.settings.appId + "_gridSettings_" + field_id;
 									var settings = JSON.parse( localStorage.getItem( storageName ));
 									gridMaker.view.Viewer.render({
 										field_id : field_id // Not mandatory, default 0. Type: integer

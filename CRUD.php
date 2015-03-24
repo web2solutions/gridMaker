@@ -57,7 +57,9 @@ setcookie(
 		
             window.onload = function()
             {
+				
 				var grid_id = 'grid_1';
+				var field_id = 0;
 				var cdn_application_path = window.location.protocol + '//' + window.location.host + '/gridMaker/';
 				//CAIRS.environment = "production";	
 				/* load gridMaker */
@@ -70,11 +72,11 @@ setcookie(
 						,base_path : window.location.protocol + '//' + window.location.host + '/' // Type: string. Mandatory
 						,fnCallBack : function(){
 							
-							var storageName = gridMaker.settings.appId + "_gridSettings_" + grid_id;
+							var storageName = gridMaker.settings.appId + "_gridSettings_" + field_id;
 							var settings = JSON.parse( localStorage.getItem( storageName ));
 							
 							gridMaker.view.CRUD.render({
-								field_id : 0 // Not mandatory, default 0. Type: integer
+								field_id : field_id // Not mandatory, default 0. Type: integer
 								,container: grid_id // Mandatory. DIV ID. Type string
 								,settings : settings // Mandatory. Grid settings 
 								// (http://docs.dhtmlx.com/grid__json_configuration.html). Type JSON

@@ -58,6 +58,7 @@ setcookie(
             window.onload = function()
             {
 				var grid_id = 'grid_1';
+				var field_id = 0;
 				var cdn_application_path = window.location.protocol + '//' + window.location.host + '/gridMaker/';
 				//CAIRS.environment = "production";	
 				/* load gridMaker */
@@ -79,10 +80,9 @@ setcookie(
 								localStorage.setItem(storageName, JSON.stringify( settings ));
 							
 							gridMaker.view.Admin.render({
-								field_id : 0 // Not mandatory, default 0. Type: integer
-								,container: grid_id // Mandatory. DIV ID. Type string
+								field_id : field_id // Not mandatory, default 0. Type: integer
 								,settings : JSON.parse( localStorage.getItem(	
-									gridMaker.settings.appId + "_gridSettings_" + grid_id
+									gridMaker.settings.appId + "_gridSettings_" + field_id
 								)) // Mandatory. Grid settings 
 								,agency_id : 25 // Type: integer. Mandatory
 								
@@ -93,7 +93,7 @@ setcookie(
 								field_id : 0 // Not mandatory, default 0. Type: integer
 								,container: grid_id // Mandatory. DIV ID. Type string
 								,settings : JSON.parse( localStorage.getItem(	
-									gridMaker.settings.appId + "_gridSettings_" + grid_id
+									gridMaker.settings.appId + "_gridSettings_" + field_id
 								)) // Mandatory. Grid settings 
 							});
 							
